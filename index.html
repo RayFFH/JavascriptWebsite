@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>About Me</title>
+</head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="style.css"> <!-- Include your existing styles -->
+    <title>Clickable Map</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>About Me</h1>
+    </header>
+    <div id="random-quote">
+        <h2>Random Quote</h2>
+        <div id="quote"></div>
+        <button id="new-quote">New Quote</button>
+    </div>
+
+    <section class="content" id="about">
+        <div class="profile">
+            <img src="your-profile-image.jpg" alt="Your Name">
+            <h2>Phoenix</h2>
+            <p>Future Web Developer</p>
+        </div>
+
+        <div class="description">
+            <p>
+                Hey, I'm Phoenix. Initially, I started as an electronic engineer, but around a year ago, I became more interested
+            in software engineering. What excites me about software engineering is how it allows you to create something unique
+            and distribute it around the world. I've always been a more creative person and want to translate that into code.
+            Another ambition of mine is to experience the world and live in countries that I've always wanted to go to. Software
+            engineering is truly a worldwide profession that allows people to do careers across the globe. I'm fully invested in becoming
+            a software engineer and I'm enjoying learning something new everday.
+            </p>
+
+            <p>
+               I started my coding journey doing static programming with java. However during my degree I learned C as that is what we
+               would use to program embedded controllers. After learning C, i focused on learning python and did object orientated
+               programming, data structures and algorithms and even AWS courses. This is my first time really using javascript and 
+               I've really enjoyed the learning process.
+            </p>
+        </div>
+    </section>
+
+    <section class="content" id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>VHDL</li>
+            <li>MATLAB</li>
+            <li>C</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>MySQL</li>
+        </ul>
+    </section>
+
+    <section class="content" id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:phoenix222smart@gmail.com">phoenix222smart@gmail.com</a></p>
+        <p>Telephone: 07706486628</p>
+    </section>
+
+    <div id="dark-mode-toggle" onclick="toggleDarkMode()">🌙</div>
+    <footer>
+        <p>&copy; Phoenix Smart | <span id="current-date"></span></p>
+    </footer>
+    <div id="map"></div>
+
+    <script src="script.js"></script>
+</body>
+
+
+</html>
