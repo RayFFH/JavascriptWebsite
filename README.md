@@ -1,6 +1,6 @@
 ﻿# JavascriptWebsite
 
-<h1> Hey this is a javascript website that you tells a bit about me and why i want to code</h1>
+<h1> Hey this is a javascript website that tells a bit about me and why i want to code</h1>
 This website was made using vanilla javascript, html and css.
 <h1>Features of website</h1>
 *Dark mode and light mode
