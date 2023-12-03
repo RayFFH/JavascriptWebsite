@@ -44,3 +44,22 @@ function toggleDarkMode() {
 Having a dark mode on a website has been a staple so actually adding it to mine was exciting.
 In this code im essentialy referecning the <body> element of the html file and changing 
 the assigned css with body.classList.add.
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Function to fetch a random quote
+    function fetchRandomQuote() {
+        fetch('https://api.quotable.io/random')
+            .then(response => response.json())
+            .then(data => {
+                // Display the fetched quote and author
+                const quoteElement = document.getElementById('quote');
+                quoteElement.innerHTML = `<blockquote>${data.content}</blockquote><cite>${data.author}</cite>`;
+            })
+            .catch(error => console.error('Error fetching random quote:', error));
+    }
+
+    // Fetch a random quote
+    fetchRandomQuote();
+This was my first time using an API with javascript, fetch('https://api.quotable.io/random') starts a GET request. I then handle the response of the server (response => response.json().
+I select the HTML element with ID quote and update the contents of the selected HTML element with the fetched data.
+
