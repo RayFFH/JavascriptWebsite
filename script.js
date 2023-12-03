@@ -4,22 +4,23 @@ document.addEventListener('DOMContentLoaded', function () {
         fetch('https://api.quotable.io/random')
             .then(response => response.json())
             .then(data => {
+                // Display the fetched quote and author
                 const quoteElement = document.getElementById('quote');
                 quoteElement.innerHTML = `<blockquote>${data.content}</blockquote><cite>${data.author}</cite>`;
             })
             .catch(error => console.error('Error fetching random quote:', error));
     }
 
-    // Fetch a random quote on page load
+    // Fetch a random quote
     fetchRandomQuote();
 
-    // Fetch a new random quote when the user clicks the "New Quote" button
+    // Fetch a new random quote
     const newQuoteButton = document.getElementById('new-quote');
     if (newQuoteButton) {
         newQuoteButton.addEventListener('click', fetchRandomQuote);
     }
 });
-
+// Update dark mode text and body
 function toggleDarkMode() {
     const body = document.body;
     body.classList.toggle('dark-mode');
@@ -35,8 +36,9 @@ function toggleDarkMode() {
         darkModeToggle.textContent = '🌙';
     }
 }
-
+//only executes when DOM content is fully loaded
 document.addEventListener('DOMContentLoaded', function () {
+    //adds click event listeners
     const navLinks = document.querySelectorAll('nav a');
 
     navLinks.forEach(function (link) {
@@ -57,31 +59,30 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Function to display the current date in the footer
+    //current date in the footer
     function displayCurrentDate() {
         const currentDateElement = document.getElementById('current-date');
         const currentDate = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
         currentDateElement.textContent = currentDate;
     }
 
-    // Display the current date on page load
+    // Show the current date
     displayCurrentDate();
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Set initial coordinates and zoom level
-    const initialCoordinates = [35.6895, 139.6917]; // Example coordinates (Tokyo)
-    const initialZoom = 5; // Adjust the zoom level as needed
+    //initial coordinates and zoom level
+    const initialCoordinates = [35.6895, 139.6917]; // Tokyo Coorindates
+    const initialZoom = 5; 
 
     // Initialize the map
     const map = L.map('map').setView(initialCoordinates, initialZoom);
 
-    // Add a tile layer (you can use a different tile layer if needed)
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors'
     }).addTo(map);
 
-    // Add markers with popups for different locations in Japan
+    // Different locations in Japan marked
     const locations = [
         { coordinates: [35.6895, 139.6917], name: 'Tokyo', description: 'Capital city of Japan' },
         { coordinates: [34.6937, 135.5022], name: 'Osaka', description: 'Famous for its modern architecture, nightlife, and street food' },
@@ -96,6 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
 
     locations.forEach(location => {
+        //Creates the markets and attaches information
         const marker = L.marker(location.coordinates).addTo(map);
         marker.bindPopup(`<b>${location.name}</b><br>${location.description}`).openPopup();
     });
