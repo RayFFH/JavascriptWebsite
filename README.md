@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
         attribution: '© OpenStreetMap contributors'
     }).addTo(map);
 
-This function is one of my favvourities, it holds the geographical coorindates of the map.
+This function is one of my favourities, it holds the geographical coorindates of the map.
 I then use the leaflet library and its methods to set the view i want, which in this case is japan. I choose openstreetmap has my tile layer provider, I didn't really know what tiles were
 before and learning how different tile sets are cached and used for different zoom levels to 
 increase speed was interesting.
@@ -42,7 +42,7 @@ function toggleDarkMode() {
     }
 }
 Having a dark mode on a website has been a staple so actually adding it to mine was exciting.
-In this code im essentialy referecning the <body> element of the html file and changing 
+In this code im essentialy referencing the <body> element of the html file and changing 
 the assigned css with body.classList.add.
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -58,8 +58,16 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(error => console.error('Error fetching random quote:', error));
     }
 
-    // Fetch a random quote
-    fetchRandomQuote();
+    function fetchRandomQuote() {
+        fetch('https://api.quotable.io/random')
+            .then(response => response.json())
+            .then(data => {
+                // Display the fetched quote and author
+                const quoteElement = document.getElementById('quote');
+                quoteElement.innerHTML = `<blockquote>${data.content}</blockquote><cite>${data.author}</cite>`;
+            })
+            .catch(error => console.error('Error fetching random quote:', error));
+    }
 This was my first time using an API with javascript, fetch('https://api.quotable.io/random') starts a GET request. I then handle the response of the server (response => response.json().
-I select the HTML element with ID quote and update the contents of the selected HTML element with the fetched data.
+I select the HTML element with the ID "quote" and update the contents of the selected HTML element with the fetched data.
 
